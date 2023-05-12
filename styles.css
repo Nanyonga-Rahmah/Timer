@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0.6;
+  background-image: url(images/timer2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.container {
+  text-align: center;
+  background-color: white;
+  width: 300px;
+  min-width: max-content;
+  box-shadow: 0 0 3px;
+  /* max-width: max-content; */
+  height: 30vh;
+  z-index: 3;
+  border-radius: 20px;
+}
+.animation {
+  animation-name: changeborder;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes changeborder {
+  0% {
+    box-shadow: 0 0 10px gold;
+  }
+  25% {
+    box-shadow: 0 0 10px purple;
+  }
+  50% {
+    box-shadow: 0 0 10px burlywood;
+  }
+  80% {
+    box-shadow: 0 0 5px rgb(2, 99, 75);
+  }
+  100% {
+    box-shadow: 0 0 3px rgb(245, 107, 65);
+  }
+}
+.timer {
+  font-size: 4rem;
+  text-align: center;
+  padding: 10px;
+}
+.buttons {
+  margin: 20px 0;
+}
+button {
+  font-size: 22px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: none;
+  width: max-content;
+  margin: 0 5px;
+}
+.play {
+  background-color: aquamarine;
+}
+#pause {
+}
+.reset {
+  background-color: goldenrod;
+}
+footer {
+  font-size: 1.2rem;
+  margin-top: 5%;
+}
